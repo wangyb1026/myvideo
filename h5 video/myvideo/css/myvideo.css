@@ -1,0 +1,164 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.player{
+	width: 800px;
+	height: 480px;
+	margin: 40px auto;
+	position: relative;
+	overflow: hidden;
+}
+#videoWrapper .loading{
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	top:50%;
+	left: 50%;
+	margin-top: -12.5px;
+	margin-left: -12.5px;
+	background-color: rgba(255,255,255,0.8);
+	z-index: 1;
+}
+#videoWrapper .loading img{
+	width: 25px;
+	height: 25px;
+}
+#videoWrapper .myvideo{
+	width:100%;
+	height: 100%;
+	background: #000;
+}
+#videoWrapper .title{
+	display: none;
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	text-indent: 1em;
+	background-color: rgba(0,0,0,.8);
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #fff;
+}
+#videoWrapper .bottom{
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,.8);
+	border-top: 1px solid rgba(0,0,0,.9);
+	padding: 5px 5px;
+	box-sizing: border-box;
+}
+#videoWrapper .bottom .processbar{
+	width: 100%;
+	height: 15px;
+	overflow: hidden;
+	margin-top: 2px;
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+#videoWrapper .bottom .processbar .bar{
+	width: 100%;
+	height: 5px;
+	float: left;
+	border:1px solid #999;
+	border-radius: 5px;
+	cursor: pointer;
+	overflow: hidden;
+}
+#videoWrapper .bottom .processbar .bar .barlength{
+	width: 0;
+	height: 5px;
+	display: block;
+	background-color: #fff;
+}
+#videoWrapper .bottom .processbar .time{
+	width:112px;
+	font-size: 14px;
+	text-align: center;
+	float: right;
+	color: #fff;
+}
+#videoWrapper .bottom .control{
+	width: 100%;
+	height: 33px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+#videoWrapper .bottom .control .control-play{
+	float: left;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+#videoWrapper .bottom .control .control-play i{
+  font-size:25px;
+	padding-top: 3px;
+	padding-left: 10px;
+	cursor: pointer;
+	color: #fff;
+	transition: all .3s;
+}
+#videoWrapper .bottom .control .control-play i#stop{
+	font-size: 16px;
+}
+
+#videoWrapper .bottom .control .control-volume{
+	height: 33px;
+	float: right;
+	padding-right: 10px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+#videoWrapper .bottom .control .control-volume i{
+	font-size: 20px;
+	padding-top: 3px;
+	cursor: pointer;
+	color: #fff;
+	transition: all .3s;
+}
+#videoWrapper .bottom .control .control-volume .fullscreen{
+	margin-right: 20px;
+}
+#videoWrapper .bottom .control .control-volume .soundbar{
+	width: 100px;
+	height: 10px;
+	line-height: 15px;
+	display: inline-block;
+	border: 1px solid #fff;
+	border-radius: 5px;
+	cursor: pointer;
+	overflow: hidden;
+	margin-left: 5px;
+}
+#videoWrapper .bottom .control .control-volume .soundbar .soundbarlength{
+	width: 0;
+	height: 10px;
+	display: block;
+	background-color: #fff;
+}
+#videoWrapper .bottom i:hover{
+	color:#abcdef !important;
+}
+
+/* 全屏功能样式重置 */
+video::-webkit-media-controls{
+	display:none !important;
+}
+
+.player:-ms-fullscreen {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+.player:-moz-full-screen {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
