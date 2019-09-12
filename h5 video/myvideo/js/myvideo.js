@@ -54,15 +54,88 @@ $(function(){
     function playAndPause(){
     	if(video[0].paused || video[0].ended){
     		video[0].play();
-    		$('#play').html('&#xe674;');
+				$('#play').html('&#xe674;');
+				$('#videoWrapper').on('mousemove', function(){
+					clearTimeout(cursorTimeout);
+					$('#videoWrapper').css({
+						cursor: 'default'
+					})
+					var isShown = false;
+					if(parseInt($('.bottom').css('bottom')) > -62){
+						isShown = true;
+					}
+					if(!isShown){
+						$('#videoWrapper .title').stop().animate({
+							'top':0
+						},500);
+						$('#videoWrapper .bottom').stop().animate({
+							'bottom':0
+						},500);
+						// isShown = true;
+					}
+					
+					cursorTimeout =	setTimeout(function(){
+						$('#videoWrapper').css({
+							cursor: 'none'
+						})
+						$('#videoWrapper .title').stop().animate({
+							'top':'-30px'
+						},500);
+						$('#videoWrapper .bottom').stop().animate({
+							'bottom':'-62px'
+						},500);
+						isShown = false;
+					},2000)
+				})
+				// 在控制区域取消自动隐藏相关事件
+				$('#videoWrapper .bottom').on('mousemove', function(){
+					clearTimeout(cursorTimeout);
+					$('#videoWrapper').unbind('mousemove');
+				}).on('mouseout', function(){
+					$('#videoWrapper').on('mousemove', function(){
+						clearTimeout(cursorTimeout);
+						$('#videoWrapper').css({
+							cursor: 'default'
+						})
+						var isShown = false;
+						if(parseInt($('.bottom').css('bottom')) > -62){
+							isShown = true;
+						}
+						if(!isShown){
+							$('#videoWrapper .title').stop().animate({
+								'top':0
+							},500);
+							$('#videoWrapper .bottom').stop().animate({
+								'bottom':0
+							},500);
+							// isShown = true;
+						}
+						
+						cursorTimeout =	setTimeout(function(){
+							$('#videoWrapper').css({
+								cursor: 'none'
+							})
+							$('#videoWrapper .title').stop().animate({
+								'top':'-30px'
+							},500);
+							$('#videoWrapper .bottom').stop().animate({
+								'bottom':'-62px'
+							},500);
+							isShown = false;
+						},2000)
+					})
+				})
     	}else{
             video[0].pause();
     		$('#play').html('&#xe65c;');
     	}
     } ;             
     function stopVideo(){
+			if(video[0].currentTime === 0) {
+				return;
+			}
         video[0].pause();
-        video[0].currentTime=0;
+        video[0].currentTime = 0;
         $('#play').html('&#xe65c;');
     };
     
@@ -153,7 +226,7 @@ $(function(){
     }
        //进度条更新：
     function updateSoundbar(x,val) {
-        var progress = $(".soundbar");   
+        var progress = $("#videoWrapper .soundbar");   
         var percent = 100 * (x - progress.offset().left) / progress.width();//传入的pageX,表示鼠标相对于浏览器左边的距离
         if(val){
         	percent = val * 100;
@@ -166,13 +239,14 @@ $(function(){
 	        }
         }                                                                   //要减去进度条本身距浏览器左侧的距离
                
-        $(".soundbarlength").css('width', percent + "%");
+        $("#videoWrapper .soundbarlength").css('width', percent + "%");
         video[0].volume =  percent / 100;//更新当前视频音量
     }
 
     //视频结束后恢复
     video.on('ended',function(){
-    	$('#play').attr('src','img/play.png');
+			$('#play').html('&#xe65c;');
+			video[0].pause();
     	video[0].currentTime=0;
     })
 
@@ -194,6 +268,7 @@ $(function(){
 		// 全屏
 		var fullscreen = null;
 		var cursorTimeout = null;
+		var isplaying = false;
 		$('#fullscreen').on('click', function(){
 			if (fullscreen) {
 				exitFullscreen();
@@ -217,7 +292,7 @@ $(function(){
 						$('#videoWrapper .bottom').stop().animate({
 							'bottom':0
 						},500);
-						isShown = true;
+						// isShown = true;
 					}
 					
 					cursorTimeout =	setTimeout(function(){
@@ -233,25 +308,48 @@ $(function(){
 						isShown = false;
 					},2000)
 				})
+				// 在控制区域取消自动隐藏相关事件
+				$('#videoWrapper .bottom').on('mousemove', function(){
+					clearTimeout(cursorTimeout);
+					$('#videoWrapper').unbind('mousemove');
+				}).on('mouseout', function(){
+					$('#videoWrapper').on('mousemove', function(){
+						clearTimeout(cursorTimeout);
+						$('#videoWrapper').css({
+							cursor: 'default'
+						})
+						var isShown = false;
+						if(parseInt($('.bottom').css('bottom')) > -62){
+							isShown = true;
+						}
+						if(!isShown){
+							$('#videoWrapper .title').stop().animate({
+								'top':0
+							},500);
+							$('#videoWrapper .bottom').stop().animate({
+								'bottom':0
+							},500);
+							// isShown = true;
+						}
+						
+						cursorTimeout =	setTimeout(function(){
+							$('#videoWrapper').css({
+								cursor: 'none'
+							})
+							$('#videoWrapper .title').stop().animate({
+								'top':'-30px'
+							},500);
+							$('#videoWrapper .bottom').stop().animate({
+								'bottom':'-62px'
+							},500);
+							isShown = false;
+						},2000)
+					})
+				})
 			}
 		})
 
-		$('#videoWrapper .bottom').on('mouseenter', function(){
-			clearTimeout(cursorTimeout);
-		}).on('mouseleave', function(){
-			cursorTimeout =	setTimeout(function(){
-				$('#videoWrapper').css({
-					cursor: 'none'
-				})
-				$('#videoWrapper .title').stop().animate({
-					'top':'-30px'
-				},500);
-				$('#videoWrapper .bottom').stop().animate({
-					'bottom':'-62px'
-				},500);
-				isShown = false;
-			},2000)
-		})
+		
 		//进入全屏
 		function FullScreen() {
 			var vW = $('#videoWrapper').get(0);
@@ -292,10 +390,36 @@ $(function(){
 				fullscreen = true;
 			} else {
 				fullscreen = false;
-				$('#fullscreen').html('&#xe656;').attr('title','全屏');
-				$('#videoWrapper').unbind('mousemove').css({
-					cursor: 'default'
-				})
+				if (!isplaying) {
+					clearTimeout(cursorTimeout);
+					$('#videoWrapper').unbind('mousemove').css({
+						cursor: 'default'
+					})
+					$('#videoWrapper .bottom').unbind();
+					$('#videoWrapper .title').stop().animate({
+						'top':0
+					},500);
+					$('#videoWrapper .bottom').stop().animate({
+						'bottom':0
+					},500);
+				}
 			}
 		}
+		video[0].addEventListener('playing', function(){
+			isplaying = true;
+			$('#play').html('&#xe674;');
+		})
+		video[0].addEventListener('pause', function(){
+			clearTimeout(cursorTimeout);
+			$('#videoWrapper').unbind('mousemove').css({
+				cursor: 'default'
+			})
+			$('#videoWrapper .bottom').unbind();
+			$('#videoWrapper .title').stop().animate({
+				'top':0
+			},500);
+			$('#videoWrapper .bottom').stop().animate({
+				'bottom':0
+			},500);
+		})
 })
