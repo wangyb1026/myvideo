@@ -1,4 +1,7 @@
+(function(){
+	$('head').append('<link rel="stylesheet" href="myvideo/css/myvideo.css">');
 $(function(){
+	$('#videoWrapper').append('<div class="loading"><img src="myvideo/img/loading.gif"></div><video src="" id="myvideo" class="myvideo" poster="" data-name="VideoTest">您的浏览器不支持播放HTML5视频</video><div class="title"></div><div class="bottom"><div class="processbar"><div class="bar"><span class="barlength" id="barlength"></span></div><div class="time"><span id="curtime"></span>/<span id="fulltime"></span></div></div><div class="control"><div class="control-play"><i class="iconfont" id="play" title="播放">&#xe65c;</i><i class="iconfont" id="stop" title="停止">&#xe602;</i></div><div class="control-volume"><i class="iconfont fullscreen" id="fullscreen" title="全屏">&#xe656;</i><i class="iconfont" id="volume" title="静音">&#xe6b1;</i><div class="soundbar"><span class="soundbarlength"></span></div></div></div></div>')
 	function MyVideo(obj) {
 			this.obj = obj;
 			this.init();
@@ -13,21 +16,20 @@ $(function(){
 					height: this.obj.wrapper.height || '480px'
 				});
 			}
+			$('#myvideo').attr('src', this.obj.url);
 	}
 	// 视频初始化样式配置
 	/*
 	* 配置说明：
 	* 实例化： new MyVideo();
 	* 参数：
+	* url: 必须， 视频文件路径， 视频格式为mp4;
 	* showTitle： 显示标题栏 【false】,默认css也为display:none；
 	* wrapper: 播放器大小【800 x 600】, wrapper键： width,height；
 	*/
 	new MyVideo({
 		showTitle: true,
-		// wrapper: {
-		// 	width: '1280px',
-		// 	height: '720px',
-		// }
+		url: 'http://www.w3school.com.cn/example/html5/mov_bbb.mp4',
 	})
 
 
@@ -423,3 +425,4 @@ $(function(){
 			},500);
 		})
 })
+})()
