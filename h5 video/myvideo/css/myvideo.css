@@ -54,7 +54,7 @@
 #videoWrapper{
 	width: 800px;
 	height: 480px;
-	margin: 40px auto;
+	margin: 0 auto;
 	position: relative;
 	overflow: hidden;
 }
