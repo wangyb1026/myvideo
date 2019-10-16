@@ -8,7 +8,8 @@
 	* wrapper: 播放器大小【可选，800 x 600】, wrapper属性： width[String],height[String]；
 	* name: 视频标题【可选，String】；
 	*/
-(function(){
+	// Builder: Jack Wang
+;(function(){
 	$('head').append('<link rel="stylesheet" href="myvideo/css/myvideo.css">');
 	function MyVideo(obj) {
 			this.obj = obj;
@@ -251,7 +252,7 @@
     video.on('ended',function(){
 			$('#play').html('&#xe65c;');
 			video[0].pause();
-    	video[0].currentTime=0;
+    	video[0].currentTime = 0;
     })
 
     //视频元数据加载完成后执行的事件：
@@ -377,10 +378,10 @@
 				document.msExitFullscreen();
 			}
 		}
-		document.addEventListener("fullscreenchange", function() {
+		$(document).on("fullscreenchange", function() {
 			changeFullScreenStatus();
 		});
-		document.addEventListener('MSFullscreenChange', function(){
+		$(document).on('MSFullscreenChange', function(){
 			changeFullScreenStatus();
 		});
 		function changeFullScreenStatus(){
@@ -408,11 +409,11 @@
 				}
 			}
 		}
-		video[0].addEventListener('playing', function(){
+		video.on('playing', function(){
 			isplaying = true;
 			$('#play').html('&#xe674;');
 		})
-		video[0].addEventListener('pause', function(){
+		video.on('pause', function(){
 			isplaying = false;
 			clearTimeout(cursorTimeout);
 			$('#videoWrapper').unbind('mousemove').css({
