@@ -1,0 +1,237 @@
+@font-face {font-family: "iconfont";
+  src: url('../font/iconfont.eot?t=1568165880227'); /* IE9 */
+  src: url('../font/iconfont.eot?t=1568165880227#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAUMAAsAAAAACkwAAAS+AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDdAqGYIVBATYCJAMgCxIABCAFhG0HfRvQCBEVpFGQfXFgGzMOL4JDqHuVjY/68a7USLrP8cD/vXrfyFwWoJwvmOMTMJgNEl9trcwF2UCl7wPfqe/Q9npXQ7kUxObLBCQTlHZiRn4tCHrguodYmksA0FGTJfl25NFfj5o/yC1Nn4TwE3JCLgEC1H7+fj4vyjawPEBzqbpv1YUDHCXQgPp3YbTYn9AX5a+xnA104gde19fsZgJosoIHiHlSRgEYNNorgLBraqgCkzGgGxgBo1atODFbEXOggolTyWuAV7f78Ac/ggEilQS61aI+sRYxClKxmxKUglJqBqZNZ8PxNEigAGQIb5WOG6goUYDC3nNp5YC+sFEw1W4zFLyiVNGrmKPYrVQWepkqDOrCv3gQUVTQVBHUIFRBqjYjbZM1+CSVkkMZ0ElAPHQqQKXQyUC90KkCzYFOANqNBjVA3ZzQB4wB/4QNCCu4Kn52NhId5VJTPZog9IVNQ0edflZLS8/YZKR4uUQ6zaCA3zRti2AqKlggbJ3uLBZtnC6TGPWfvG6ruuZSFM9eGLSj1g8lcxXatNbwEUVi8eIefLaOYCFs5TiipLagn9ZYjKeDC8ukLIvCqkEFP/RWLH8juve6XMrzixYYkAsXGsv6HjKS0CA5QpTPd4Db5HbXpd6R/pbUJFhxG58jYqGZ2JH7blnQK28HHrxrrbLqTnVm8MhtXb9u0SajRcuNjw5JBsMWLVu+2fCyXLiXskA0rQw3ROAPlstF9+4VLIj8PmXc+OfuXz3+22rJeC13pfu3kePj+FePr+7aBZ22Ox7A1/w4pV7HSNf/vTl1bUammaVZRtaacdj37TA9B0J3WZrs1ejRKyk5fnyYEYwmSyRYtGhZ8FV9qf7VYBe9K1cqaQPGdEGiw1kefI1cVg3l2Ae0jQ39QPCNQMuSSyVo5uUl1ogmXuPKNR/WxeQl1fEDkx6Q75NTV5fz9MPHgY8f9LM938gHeOJpTt25GVZZVzBE7K0TPTfBi4rurFc7oVbfyUfforIfMVivb7yzq88zXTr/x61Jc9Kz1C3ZjEyJ8OnPGvPQculgpWdmrWdWpVx2TCrfmtg9L7Fna65smAaXlimTJ1kXzD4k+VzQsHCZvMS5dR+60dW6P3pkHnoAlP10NzUDIB3J75QPqc2Us7OeomKEqAknIOJ9Xve+0i65QjviN/Ppw8jHqs5/TtItAXUkdwb4+3XQY4FSmYWTlPT1fHNcANdXoevwpLpY/KdiETSFB0p4hng6JTbpHCNgMuIjRGosIWE44DLJAyo4AVDFiIYmdySf3qKPblCIrA6YYWIABB3sBJKWk0DxXvnF7ZH+YN+Dfzhw1S6c+O72gqcew5MntkqsgX4NqCk7aZYTX/5u/RQVp6WO+W15xDC0VZNPv9lseYpDxoXvRBw4pgSvwe1sjASFaW61VINImdW1q3qhSlPaOvGEWYqwDNBbA0gjmTPDxUnh999Z3iRSuKHvnfebxUY4P2hVmg64N1Xu1Hcry0cLXkcIx7c5jCTgFTYrigQBpXrdnKWJyjAgVszUbJDrqqqWx9I7PQPAokcxpdLGOq4Xh2P2a8yH4mo3A17+TCqX5KxxohUqOujJqeyPyvwXG5XbSdoqjvrpItbqt7YAAAA=') format('woff2'),
+  url('../font/iconfont.woff?t=1568165880227') format('woff'),
+  url('../font/iconfont.ttf?t=1568165880227') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('../font/iconfont.svg?t=1568165880227#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-jingyin:before {
+  content: "\e690";
+}
+
+.icon-tingzhi:before {
+  content: "\e602";
+}
+
+.icon-quanpingsuoxiao:before {
+  content: "\e64c";
+}
+
+.icon-bofang:before {
+  content: "\e65c";
+}
+
+.icon-quanping:before {
+  content: "\e656";
+}
+
+.icon-zantingtingzhi:before {
+  content: "\e674";
+}
+
+.icon-yinliang:before {
+  content: "\e6b1";
+}
+
+
+
+
+
+*{
+	margin: 0;
+	padding: 0;
+}
+#videoWrapper{
+	width: 800px;
+	height: 480px;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+}
+#videoWrapper .loading{
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	top:50%;
+	left: 50%;
+	margin-top: -12.5px;
+	margin-left: -12.5px;
+	z-index: 1;
+}
+#videoWrapper .loading img{
+	width: 25px;
+	height: 25px;
+}
+#videoWrapper .myvideo{
+	width:100%;
+	height: 100%;
+	background: #000;
+}
+#videoWrapper .title{
+	display: none;
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	text-indent: 1em;
+	background-color: rgba(0,0,0,.8);
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #fff;
+}
+#videoWrapper .bottom{
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,.8);
+	border-top: 1px solid rgba(0,0,0,.9);
+	padding: 5px 5px;
+	box-sizing: border-box;
+}
+#videoWrapper .bottom .processbar{
+	width: 100%;
+	height: 15px;
+	overflow: hidden;
+	margin-top: 2px;
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+#videoWrapper .bottom .processbar .bar{
+	width: 100%;
+	height: 5px;
+	float: left;
+	border:1px solid #999;
+	border-radius: 5px;
+	cursor: pointer;
+	overflow: hidden;
+}
+#videoWrapper .bottom .processbar .bar .barlength{
+	width: 0;
+	height: 5px;
+	display: block;
+	background-color: #fff;
+}
+#videoWrapper .bottom .processbar .time{
+	width:112px;
+	font-size: 14px;
+	text-align: center;
+	float: right;
+	color: #fff;
+}
+#videoWrapper .bottom .control{
+	width: 100%;
+	height: 33px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+#videoWrapper .bottom .control .control-play{
+	float: left;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+#videoWrapper .bottom .control .control-play i{
+  font-size:25px;
+	padding-top: 3px;
+	padding-left: 10px;
+	cursor: pointer;
+	color: #fff;
+	transition: all .3s;
+}
+#videoWrapper .bottom .control .control-play i#stop{
+	font-size: 16px;
+}
+
+#videoWrapper .bottom .control .control-volume{
+	height: 33px;
+	float: right;
+	padding-right: 10px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+#videoWrapper .bottom .control .control-volume i{
+	font-size: 20px;
+	padding-top: 3px;
+	cursor: pointer;
+	color: #fff;
+	transition: all .3s;
+}
+#videoWrapper .bottom .control .control-volume .fullscreen{
+	margin-right: 20px;
+}
+#videoWrapper .bottom .control .control-volume .soundbar{
+	width: 100px;
+	height: 10px;
+	line-height: 15px;
+	display: inline-block;
+	border: 1px solid #fff;
+	border-radius: 5px;
+	cursor: pointer;
+	overflow: hidden;
+	margin-left: 5px;
+}
+#videoWrapper .bottom .control .control-volume .soundbar .soundbarlength{
+	width: 0;
+	height: 10px;
+	display: block;
+	background-color: #fff;
+}
+#videoWrapper .bottom i:hover{
+	color:#abcdef !important;
+}
+#videoWrapper .video-mask{
+	position: absolute;
+	width: 100%;
+	height: calc(100% - 101px);
+	left:0;
+	top:30px;
+	background-color: rgba(0,0,0,.6);
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+#videoWrapper .video-mask .mask-button{
+	padding: 10px 20px;
+	font-size: 16px;
+	color: #fff;
+	background-color: rgba(255,255,255, .06);
+	border: 1px solid #fff;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: all .3s;
+}
+#videoWrapper .video-mask .mask-button:hover{
+	background-color: rgba(255,255,255, .3);
+}
+
+/* 全屏功能样式重置 */
+video::-webkit-media-controls{
+	display:none !important;
+}
+
+#videoWrapper:-ms-fullscreen {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+#videoWrapper:-moz-full-screen {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
